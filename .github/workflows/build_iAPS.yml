@@ -2,7 +2,21 @@ name: 4. Build iAPS
 run-name: Build iAPS (${{ github.ref_name }})
 on:
   workflow_dispatch:
-  
+  inputs:
+      IOS_DEPLOYMENT_TARGET:
+        description: 'iOS version'
+        required: false
+        default: '16.4'
+
+      ENABLE_DEXCOM_DIRECT:
+        description: 'Enable direct Dexcom G6 CGM support (Bluetooth)'
+        required: false
+        default: 'true'
+
+      ENABLE_OMNIPOD_DASH:
+        description: 'Enable Omnipod Dash pump support'
+        required: false
+        default: 'true'
   # this will trigger this workflow for any push to any branch that this workflow is
   # active on, *but*, the auto_build_check job will check to see if this branch is
   # enabled *for* being auto built, and short circuit the process if so.
