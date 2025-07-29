@@ -2,7 +2,7 @@ name: 4. Build iAPS
 run-name: Build iAPS (${{ github.ref_name }})
 on:
   workflow_dispatch:
-  inputs:
+    inputs:
       IOS_DEPLOYMENT_TARGET:
         description: 'iOS version'
         required: false
